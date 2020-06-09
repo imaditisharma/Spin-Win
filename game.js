@@ -14,12 +14,10 @@ function preload() {
     this.load.image('mywheel', 'Assets/wheel.png');
     this.load.image('pin', 'Assets/pin.png');;
     this.load.image('stand', 'Assets/stand.png');
-    this.load.image('startBtn', 'Assets/spin-n-win-logo.png.jpg');
-    this.load.image('yougot', 'Assets/Youwon.jpg');
-    
-    // this.load.image('restart', 'assets/restart.png');
-    this.load.audio('spin', 'Asset/sound.mp3.wav');
-    // this.load.audio('drum', 'assets/drum.mp3')
+    this.load.image('start', 'Assets/spin-n-win-logo.png.jpg');
+    this.load.image('won', 'Assets/Youwon.jpg');
+
+    this.load.audio('spin', 'Assets/sound.mp3.wav');
 }
 
 function create() {
@@ -30,20 +28,20 @@ function create() {
     this.pin.depth = 1;
     this.stand = this.add.sprite(W / 2, H / 2 + 250, 'stand').setScale(0.25);
     this.wheel = this.add.sprite(W / 2, H / 2+50, 'mywheel').setScale(0.2).setOrigin(0.5, 0.5);
-    this.startBtn = this.add.sprite(W/2, 70, 'startBtn').setScale(.50).setInteractive({
+    this.start = this.add.sprite(W/2, 70, 'start').setScale(.50).setInteractive({
         cursor: 'pointer'
     });
     
-    this.yougot = this.add.sprite(400, 300, 'yougot');
-    this.yougot.visible = false;
+    this.won = this.add.sprite(400, 300, 'won');
+    this.won.visible = false;
     this.spin = this.sound.add('spin');
-    this.startBtn.on('pointerdown', spinWheel, this);
+    this.start.on('pointerdown', spinWheel, this);
 }
 
 function spinWheel() {
     let W = game.config.width;
     let H = game.config.height;
-    this.startBtn.visible = false;
+    this.start.visible = false;
     this.sound.play('spin');
     console.log("In the spin wheel function");
     let rounds = Phaser.Math.Between(0, 11);
