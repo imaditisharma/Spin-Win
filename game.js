@@ -56,11 +56,11 @@ function spinWheel() {
     setTimeout(() => {
         console.log("Timeout to freeze the mouse")
         this.pin.visible = false;
-        this.yougot.visible = true;
+        this.won.visible = true;
         this.add.text(W / 2 - 100, H / 2 + 100, `${prizes[rounds]}`, {
-            fontSize: '30px',
+            fontSize: '40px',
             fontFamily: 'Times New Roman',
-            color: 'orange',
+            color: 'red',
         });
         this.input.on("pointerdown", restart, this);
     }, 13000);
