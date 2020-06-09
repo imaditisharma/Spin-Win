@@ -17,7 +17,7 @@ function preload() {
     this.load.image('start', 'Assets/spin-n-win-logo.png.jpg');
     this.load.image('won', 'Assets/Youwon.jpg');
 
-    this.load.audio('spin', 'Assets/wheel-audio.mp3.wav');
+    this.load.audio('spin', 'Assets/wheel-audio.mp3.mp3');
 }
 
 function create() {
@@ -51,7 +51,7 @@ function spinWheel() {
         targets: this.wheel,
         ease: "Cubic.easeOut",
         angle: 360 * 3 + (30 * rounds),
-        duration: 8000
+        duration: 13000
     })
     setTimeout(() => {
         console.log("Timeout to freeze the mouse")
@@ -64,7 +64,7 @@ function spinWheel() {
             style: 'bold',
         });
         this.input.on("pointerdown", restart, this);
-    }, 8000);
+    }, 13000);
 
 }
 
