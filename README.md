@@ -2,4 +2,3 @@
 Coding blocks competition
 
 
-# chai is love
